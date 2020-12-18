@@ -1,21 +1,19 @@
-interface Driveable{
-    speed: number;
-    drive(): string;
+class NumberHolder{
+    value: number;
+}
+class StringHolder{
+    value: string;
+}
+class BooleanHolder{
+    value: boolean;
 }
 
-class CarA implements Driveable{
-    speed = 10;
 
-    drive(){
-        console.log(`I am driving at ${this.speed}`);
-        return "" + this.speed;
-    }
+class ValueHolder<TypeForValueProperty>{
+    value: TypeForValueProperty;
 }
 
-const myCarA = new CarA();
 
-const StartDriving = (vehical: Driveable) => {
-    vehical.drive();
-};
+const numberHolder = new ValueHolder<number>();
 
-StartDriving(myCarA);
+numberHolder.value = 10;
