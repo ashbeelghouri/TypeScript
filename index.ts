@@ -1,19 +1,14 @@
-class NumberHolder{
-    value: number;
-}
-class StringHolder{
-    value: string;
-}
-class BooleanHolder{
-    value: boolean;
+class ValueHolder<T>{
+    value: T;
 }
 
+const numberWrapper = (value:number): number[] => {
+    return [value];
+};
 
-class ValueHolder<TypeForValueProperty>{
-    value: TypeForValueProperty;
-}
 
+const valueWrapper = <T>(value: T): T[]=>{
+    return [value];
+};
 
-const numberHolder = new ValueHolder<number>();
-
-numberHolder.value = 10;
+valueWrapper<number>(10);
